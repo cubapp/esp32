@@ -89,7 +89,7 @@ String getHTTPdata(void){
   String payload="No Payload";
   HTTPClient http;
   http.setTimeout(3000);
-  http.begin("http://www.t1.cz/netatmo.txt"); //Specify the URL
+  http.begin("http://www.mydata.com/temperatures.txt"); //Specify the URL
   int httpCode = http.GET();  
   if (httpCode > 0) { //Check for the returning code
         payload = http.getString();
@@ -109,7 +109,7 @@ void displayTemp() {
     // create more fonts at http://oleddisplay.squix.ch/
     display.setTextAlignment(TEXT_ALIGN_LEFT);
     display.setFont(ArialMT_Plain_16);
-    display.drawString(0, 0, "Teploty:____"+String(counter));
+    display.drawString(0, 0, "Temps:____"+String(counter));
     display.setFont(ArialMT_Plain_10);
     display.drawString(0, 18, payload);
       

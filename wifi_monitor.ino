@@ -25,7 +25,7 @@ using namespace std;
 #define MAX_CH 14       // 1 - 14 channels (1-11 for US, 1-13 for EU and 1-14 for Japan)
 #define SNAP_LEN 2324   // max len of each recieved packet
 
-#define BUTTON_PIN 5    // button to change the channel
+#define BUTTON_PIN 0    // button to change the channel
 
 #define USE_DISPLAY     // comment out if you don't want to use the OLED display
 #define FLIP_DISPLAY    // comment out if you don't like to flip it
@@ -234,7 +234,7 @@ void coreTask( void * p ) {
 
 
     // draw Display
-    if ( currentTime - lastDrawTime > 1000 ) {
+    if ( currentTime - lastDrawTime > 500 ) {
       lastDrawTime = currentTime;
       // Serial.printf("\nFree RAM %u %u\n", heap_caps_get_minimum_free_size(MALLOC_CAP_8BIT), heap_caps_get_minimum_free_size(MALLOC_CAP_32BIT));// for debug purposes
 
